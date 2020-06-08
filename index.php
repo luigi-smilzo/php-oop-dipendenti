@@ -30,7 +30,11 @@ include_once __DIR__ . '/classes/Seller.php';
             <tbody>
                 <?php foreach ($sellers as $seller) : ?>
                     <tr>
-                        <?php $seller->printSellerInfos() ?>
+                        <?php  try {
+                                $seller->printSellerInfos();
+                            } catch (Exception $e) {
+                                echo "Error: {$e->getMessage()}";
+                            } ?>
                     </tr>
                 <?php endforeach ?>
             </tbody>
