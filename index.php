@@ -30,11 +30,20 @@ include_once __DIR__ . '/classes/Seller.php';
             <tbody>
                 <?php foreach ($sellers as $seller) : ?>
                     <tr>
-                        <?php  try {
+                        <?php  
+                            try {
                                 $seller->printSellerInfos();
                             } catch (Exception $e) {
                                 echo "Error: {$e->getMessage()}";
-                            } ?>
+                            }
+                        ?>
+                        <?php
+                            // try {
+                            //     $seller->printSellerInfos();
+                            // } catch (Exception $e) {
+                            //     header ("Location: http://localhost/php-oop-dipendenti/error.php");
+                            // } 
+                        ?>
                     </tr>
                 <?php endforeach ?>
             </tbody>
